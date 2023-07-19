@@ -28,7 +28,9 @@ a {
 }
 
 a:hover {
-    animation: bounce 0.5s ease-in-out;
+    /* animation: bounce 0.5s ease-in-out; */
+    transform: scale(1.1);
+    transition: transform 0.1s;
 }
 
 p {
@@ -36,12 +38,7 @@ p {
     margin-top: 1rem;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-between;
-}
+
 
 nav {}
 
@@ -65,7 +62,7 @@ footer {
     position: fixed;
     top: auto;
     bottom: 0;
-    height: 10rem;
+    height: clamp(5rem, 10%, 8rem);
     background: linear-gradient(195deg, rgb(41, 63, 118), rgb(121, 207, 212) 100%);
     width: 100%;
     font-weight: 600;
@@ -151,7 +148,7 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: clamp(300px, 100%, 800px);
+    width: clamp(300px, 100%, 600px);
 }
 
 .section-title {
@@ -190,7 +187,23 @@ textarea {
     height: 6rem;
 }
 
+.body-content {
+
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+
+    justify-content: center;
+}
+
+
 @media (max-width: 768px) {
+    .body-content {
+        flex-direction: column;
+
+    }
+
     footer {
         position: relative;
         height: 5rem;
